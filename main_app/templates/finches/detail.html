@@ -25,7 +25,13 @@
     {% else %}
       <h2>A {{ finch.breed }} kitten.</h2>
     {% endif %}
-    <p>{{ finch.description }}</p>
+    <p>{{ cat.description }}</p>
+    {% comment %} New markup {% endcomment %}
+    <div class="cat-actions">
+      <a href="{% url 'finch-update' finch.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'finch-delete' finch.id %}" class="btn danger">Delete</a>
+    </div>
+    {% comment %} New markup above {% endcomment %}
   </div>
 </section>
 
